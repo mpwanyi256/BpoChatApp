@@ -172,7 +172,7 @@ export default {
       return this.$store.getters.getChatRoomName(ChatId)
     },
     createChatRoom () {
-      var chatRoom = {
+      const chatRoom = {
         Name: this.ChatRoomName
       }
       this.$store.dispatch('createChatRoom', chatRoom)
@@ -181,11 +181,11 @@ export default {
     getChatMessages (ChatRoom) {
       this.MessagesLoader = null
       this.ChatSelected = ChatRoom
-      var ChatSelected = { Chat: ChatRoom.ChatId }
+      const ChatSelected = { Chat: ChatRoom.ChatId }
       this.$store.dispatch('getMessages', ChatSelected)
     },
     sendMessage () {
-      var message = {
+      const message = {
         ChatId: this.ChatSelected.ChatId,
         Message: this.newMessage,
         UserId: this.Profile.Id
